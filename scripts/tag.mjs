@@ -37,7 +37,7 @@ const main = () => {
                 console.log(`please update version in ${packageJsonPath}`)
                 process.exit(0)
             } else {
-                addTag(answers.version, answers.message)
+                addTag(version, answers.message)
                 console.log("git tag added")
                 process.exit(0)
             }

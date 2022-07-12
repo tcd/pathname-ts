@@ -99,7 +99,7 @@ declare module "pathname-ts" {
         /**
          * Returns the children of the directory (files and subdirectories, not recursive) as an array of `IPathname`s.
          */
-        children: () => Promise<IPathname[]>
+        children: (type?: "all" | "files" | "folders") => Promise<IPathname[]>
     }
 
     /**
@@ -126,7 +126,7 @@ declare module "pathname-ts" {
         readJSON<T = any>(): Promise<T>
         write: (data: string, options?: any) => Promise<void>
         writeJSON: (data: any, options?: any) => Promise<void>
-        children: () => Promise<IPathname[]>
+        children: (type?: "all" | "files" | "folders") => Promise<IPathname[]>
     }
 
 }

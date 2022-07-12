@@ -21,6 +21,7 @@ import {
 } from "fs"
 
 import { IPathname } from "pathname-ts"
+import { asyncFilter } from "./lib"
 
 /**
  * - https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html
@@ -158,10 +159,21 @@ export class Pathname implements IPathname {
         }
     }
 
-    public async children(): Promise<IPathname[]> {
+    public async children(type: "all" | "files" | "folders" = "all"): Promise<IPathname[]> {
         try {
             const children = await readdir(this.realpath)
             const childPaths = children.map(x => new Pathname(x))
+            if (type === "all") {
+                return childPaths
+            }
+            if (type === "files") {
+                const filePaths = await asyncFilter(childPaths, async (p) => { return await p.isFile() })
+                return filePaths
+            }
+            if (type === "folders") {
+                const folderPaths = await asyncFilter(childPaths, async (p) => { return await p.isDirectory() })
+                return folderPaths
+            }
             return childPaths
         } catch (error) {
             throw error

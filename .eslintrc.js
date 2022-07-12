@@ -21,6 +21,9 @@ module.exports = {
     plugins: [
         "@typescript-eslint",
     ],
+    ignorePatterns: [
+        "./scripts/tag.js",
+    ],
     rules: {
         "semi": ["warn", "never"],
         "indent": ["warn", 4, { "SwitchCase": 1 }],

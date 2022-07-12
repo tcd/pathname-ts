@@ -1,6 +1,6 @@
 {
     "name": "pathname-ts",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "A partial implementation of Ruby's Pathname class for Node.js.",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "license": "MIT",

@@ -15,6 +15,7 @@ import {
 } from "fs"
 
 import { IPathname } from "pathname-ts"
+import { NotAFileError } from "./errors"
 
 /**
  * - https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html
@@ -28,6 +29,7 @@ export class Pathname implements IPathname {
         this.path = input
     }
 
+    public toJSON(): string { return this.absolutePath() }
     public toString(): string { return this.absolutePath() }
 
     public isAbsolute(): boolean { return isAbsolute(this.path) }
@@ -81,7 +83,7 @@ export class Pathname implements IPathname {
         try {
             const isFile = await this.isFile()
             if (!isFile) {
-                throw "path does not point to a file"
+                throw new NotAFileError(this)
             }
             const fileContent = await readFile(this.absolutePath())
             return fileContent.toString()

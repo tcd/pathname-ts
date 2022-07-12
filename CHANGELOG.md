@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 <!-- ## [Unreleased] -->
 
+## [0.1.4] - 2022-07-12
+### Added
+- Add method `IPathname#toJSON`
+### Changed
+- Improving errors
+
 ## [0.1.3] - 2022-07-12
 ### Fixed
 - Fix package.json config

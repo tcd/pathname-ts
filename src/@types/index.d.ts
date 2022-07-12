@@ -6,6 +6,7 @@ declare module "pathname-ts" {
      * A partial implementation of Ruby's [Pathname](https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html) class for [Node.js].
      */
     export interface IPathname {
+        toJSON: () => any
         toString: () => string
         /**
          * Returns an absolute path to the file system object.
@@ -43,6 +44,7 @@ declare module "pathname-ts" {
     export class Pathname implements IPathname {
         public path: string
         constructor(input: any)
+        toJSON: () => any
         toString: () => string
         absolutePath: () => string
         isAbsolute: () => boolean

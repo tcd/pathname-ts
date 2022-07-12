@@ -36,7 +36,6 @@ const promptAddTag = () => {
                 addTag(version, answers.message)
                 console.log("git tag added")
                 promptPushTags()
-                process.exit(0)
             }
         })
         .catch((error) => {

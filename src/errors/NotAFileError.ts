@@ -12,6 +12,7 @@ export class NotAFileError extends PathnameError {
             pathname: pathname,
         })
         this.name = "NotAFileError"
+        this.code = "NotAFile"
         Object.setPrototypeOf(this, NotAFileError.prototype)
     }
 }

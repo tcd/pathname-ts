@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 <!-- ## [Unreleased] -->
 
+## [0.1.2] - 2022-07-12
+### Changed
+- Improve tag script
+
 ## [0.1.1] - 2022-07-12
 ### Added
 - Add improved build scripts

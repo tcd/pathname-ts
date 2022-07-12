@@ -1,7 +1,7 @@
 {
-    "name": "pathname",
+    "name": "pathname-js",
     "version": "1.0.0",
-    "description": "JavaScript (TypeScript) implementation of Ruby's Pathname class.",
+    "description": "A partial JavaScript (TypeScript) implementation of Ruby's Pathname class.",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "license": "MIT",
     "scripts": {

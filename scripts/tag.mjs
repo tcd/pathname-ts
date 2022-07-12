@@ -6,47 +6,46 @@ import shell from "shelljs"
 // import packageJson from "../package.json";
 // const packageJson = require("../package.json")
 
+const addTag = (version, message) => {
+    const output = shell.exec(`git tag -a v${version} -m "${message}"`)
+    if (output.code !== 0) {
+        shell.echo("Error: failed to add git tag");
+        shell.exit(1)
+    }
+}
 
 const main = () => {
-    const output = shell.exec('git commit -am "Auto-commit"')
-    if (shell.exec('git commit -am "Auto-commit"').code !== 0) {
-        shell.echo('Error: Git commit failed');
-        shell.exit(1);
-    }
+    const packageJsonPath = join(process.cwd(), "package.json")
+    const packageJson     = JSON.parse(readFileSync(packageJsonPath).toString())
+    const version         = packageJson.version
 
-    // const packageJsonPath = join(process.cwd(), "package.json")
-    // const packageJson     = JSON.parse(readFileSync(packageJsonPath).toString())
-    // const version         = packageJson.version
-
-    // inquirer
-    //     .prompt([
-    //         {
-    //             name: "confirmation",
-    //             type: "confirm",
-    //             message: `add tag 'v${version}'? `,
-    //         },
-    //         {
-    //             name: "message",
-    //             type: "input",
-    //             message: "tag message: ",
-    //         },
-    //     ])
-    //     .then((answers) => {
-    //         if (answers.confirmation !== true) {
-    //             console.log(`please update version in ${packageJsonPath}`)
-    //             process.exit(0)
-    //         } else {
-
-    //         }
-    //         console.log(answers)
-    //     })
-    //     .catch((error) => {
-    //         if (error.isTtyError) {
-    //             // Prompt couldn't be rendered in the current environment
-    //         } else {
-    //             // Something else went wrong
-    //         }
-    //     });
+    inquirer
+        .prompt([
+            {
+                name: "confirmation",
+                type: "confirm",
+                message: `add tag 'v${version}'? `,
+            },
+            {
+                name: "message",
+                type: "input",
+                message: "tag message: ",
+            },
+        ])
+        .then((answers) => {
+            if (answers.confirmation !== true) {
+                console.log(`please update version in ${packageJsonPath}`)
+                process.exit(0)
+            } else {
+                addTag(answers.version, answers.message)
+                console.log("git tag added")
+                process.exit(0)
+            }
+        })
+        .catch((error) => {
+            console.error(error)
+            process.exit(1)
+        });
 }
 
 main()

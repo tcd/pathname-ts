@@ -1,9 +1,9 @@
 // import { Stats } from "fs"
 
-declare module "pathname-js" {
+declare module "pathname-ts" {
 
     /**
-     * A partial TypeScript implementation of Ruby's [Pathname](https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html) class.
+     * A partial implementation of Ruby's [Pathname](https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html) class for [Node.js].
      */
     export interface IPathname {
         toString: () => string
@@ -37,6 +37,9 @@ declare module "pathname-js" {
         read: () => Promise<string>
     }
 
+    /**
+     * A partial implementation of Ruby's Pathname class for Node.js.
+     */
     export class Pathname implements IPathname {
         public path: string
         constructor(input: any)

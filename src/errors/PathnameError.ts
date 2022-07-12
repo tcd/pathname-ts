@@ -1,4 +1,4 @@
-import { IPathname } from "pathname-js"
+import { IPathname } from "pathname-ts"
 
 export interface PathnameErrorOptions {
     message: string
@@ -7,7 +7,7 @@ export interface PathnameErrorOptions {
 }
 
 /**
- * Base class for custom Errors in ClientApp.
+ * Base class for custom Errors in `pathname-ts`.
  *
  * For reference, see the following links:
  *

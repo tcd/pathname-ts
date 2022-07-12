@@ -14,7 +14,7 @@ import {
     Stats,
 } from "fs"
 
-import { IPathname } from "pathname-js"
+import { IPathname } from "pathname-ts"
 
 /**
  * - https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html

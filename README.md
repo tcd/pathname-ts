@@ -4,9 +4,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/tcd/pathname-ts)](https://github.com/tcd/pathname-ts/issues)
 [![GitHub](https://img.shields.io/github/license/tcd/pathname-ts)](https://github.com/tcd/pathname-ts/blob/master/LICENSE.md)
 
-
 A partial implementation of Ruby's [Pathname][pathname] class for [Node.js][node].
-
 
 ## Related
 

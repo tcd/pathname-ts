@@ -4,11 +4,13 @@
     "description": "A partial implementation of Ruby's Pathname class for Node.js.",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "license": "MIT",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "files": [
-        "dist",
-        "dist/**/*.js",
-        "dist/**/*.js.map",
-        "dist/index.d.ts"
+        "./dist",
+        "./dist/**/*.js",
+        "./dist/**/*.js.map",
+        "./dist/index.d.ts"
     ],
     "scripts": {
         "build": "npm run build:clean && npm run build:rollup && npm run build:types",

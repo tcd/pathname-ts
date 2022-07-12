@@ -2,11 +2,14 @@
     "compilerOptions": {
         "module": "CommonJS",
         "target": "ESNext",
+        "moduleResolution": "node",
         "esModuleInterop": true,
         "downlevelIteration": true,
         "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "outDir": "dist",
         "sourceMap": true,
-        "outDir": "./dist",
+        "rootDir": "src",
         "types": [
             "node",
         ],
@@ -16,7 +19,7 @@
         ],
     },
     "include": [
-        "src/Pathname.ts",
+        "src",
     ],
     "exclude": [
         "ignore",

@@ -1,5 +1,10 @@
 {
     "eslint.format.enable": true,
-    "[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "cSpell.words": [
+        "copyfiles"
+    ],
     // "[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
 }

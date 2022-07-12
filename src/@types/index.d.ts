@@ -1,6 +1,6 @@
 // import { Stats } from "fs"
 
-declare module "pathname.js" {
+declare module "pathname-js" {
 
     /**
      * A partial TypeScript implementation of Ruby's [Pathname](https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html) class.
@@ -34,6 +34,18 @@ declare module "pathname.js" {
         /**
          * Returns the contents of a file at the path.
          */
+        read: () => Promise<string>
+    }
+
+    export class Pathname implements IPathname {
+        public path: string
+        constructor(input: any)
+        toString: () => string
+        absolutePath: () => string
+        isAbsolute: () => boolean
+        doesExist: () => Promise<boolean>
+        isFile: () => Promise<boolean>
+        isDirectory: () => Promise<boolean>
         read: () => Promise<string>
     }
 

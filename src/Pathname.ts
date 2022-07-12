@@ -14,13 +14,14 @@ import {
     Stats,
 } from "fs"
 
-import { IPathname } from "pathname.js"
+import { IPathname } from "pathname-js"
 
 /**
  * - https://ruby-doc.org/stdlib-2.7.0/libdoc/pathname/rdoc/Pathname.html
  * - https://github.com/ruby/pathname/blob/master/lib/pathname.rb
  */
 export class Pathname implements IPathname {
+
     public path: string
 
     constructor(input: any) {

@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "npm run build:rollup && npm run build:types",
-        "build:rollup": "cross-env rollup -c rollup.config.js",
+        "build:rollup": "rollup -c rollup.config.js",
         "build:types": "cross-env copyfiles ./src/@types/index.d.ts ./dist --flat"
     },
     "devDependencies": {

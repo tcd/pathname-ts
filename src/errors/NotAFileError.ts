@@ -1,4 +1,4 @@
-import { IPathname } from "pathname.js"
+import { IPathname } from "pathname-js"
 import { PathnameError } from "."
 
 export interface NotAFileErrorOptions {

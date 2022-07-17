@@ -1,6 +1,6 @@
 {
     "name": "pathname-ts",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "A partial implementation of Ruby's Pathname class for Node.js.",
     "author": "Clay Dunston <dunstontc@gmail.com>",
     "license": "MIT",
@@ -16,6 +16,7 @@
         "build:clean": "cross-env rimraf ./dist/*",
         "build:rollup": "cross-env rollup -c rollup.config.js",
         "build:types": "cross-env copyfiles ./src/@types/index.d.ts ./dist --flat",
+        "test": "cross-env ts-node ./src/main.ts",
         "tag": "node ./scripts/tag.mjs"
     },
     "devDependencies": {
@@ -32,6 +33,8 @@
         "rimraf": "^3.0.2",
         "rollup": "^2.76.0",
         "shelljs": "^0.8.5",
+        "ts-node": "^10.9.1",
+        "tsconfig-paths": "^4.0.0",
         "typescript": "^4.7.4"
     },
     "keywords": [

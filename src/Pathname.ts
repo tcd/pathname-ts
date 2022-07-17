@@ -96,10 +96,11 @@ export class Pathname implements IPathname {
 
     public async isFile(): Promise<boolean> {
         try {
-            if (!(await this.doesExist())) { return false }
+            // if (!(await this.doesExist())) { return false }
             const stat = await this.stat()
             return stat.isFile()
         } catch (error) {
+            throw error
             return false
         }
     }
@@ -110,6 +111,7 @@ export class Pathname implements IPathname {
             const stat = await this.stat()
             return stat.isDirectory()
         } catch (error) {
+            throw error
             return false
         }
     }
@@ -162,16 +164,30 @@ export class Pathname implements IPathname {
     public async children(type: "all" | "files" | "folders" = "all"): Promise<IPathname[]> {
         try {
             const children = await readdir(this.realpath)
-            const childPaths = children.map(x => new Pathname(x))
+            const childPaths = children.map(x => this.join(x))
             if (type === "all") {
                 return childPaths
             }
             if (type === "files") {
                 const filePaths = await asyncFilter(childPaths, async (p) => { return await p.isFile() })
+                // const filePaths = []
+                // for (const path of childPaths) {
+                //     const isFile = await path.isFile()
+                //     if (isFile) {
+                //         filePaths.push(path)
+                //     }
+                // }
                 return filePaths
             }
             if (type === "folders") {
                 const folderPaths = await asyncFilter(childPaths, async (p) => { return await p.isDirectory() })
+                // const folderPaths = []
+                // for (const path of childPaths) {
+                //     const isDir = await path.isDirectory()
+                //     if (isDir) {
+                //         folderPaths.push(path)
+                //     }
+                // }
                 return folderPaths
             }
             return childPaths

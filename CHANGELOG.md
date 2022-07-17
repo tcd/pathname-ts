@@ -6,9 +6,17 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 <!-- ## [Unreleased] -->
 
+## [0.2.2] - 2022-07-17
+### Fixed
+- Fix behavior of `IPathname#children`
+### Added
+- Add some code for debugging in development
+
+
 ## [0.2.1] - 2022-07-12
 ### Changed
 - Add new optional param to `IPathname#children`
+
 
 ## [0.2.0] - 2022-07-12
 ### Added

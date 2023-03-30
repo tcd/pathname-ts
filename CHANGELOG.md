@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog][keep-a-changelog], and this project ad
 
 <!-- ## [Unreleased] -->
 
+## [0.3.0] - 2022-07-17
+### Added
+- Add `os` param to `IPathname#toString`
+
 ## [0.2.2] - 2022-07-17
 ### Fixed
 - Fix behavior of `IPathname#children`

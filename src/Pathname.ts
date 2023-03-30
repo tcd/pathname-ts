@@ -43,7 +43,13 @@ export class Pathname implements IPathname {
     }
 
     public toJSON(): string { return this.realpath }
-    public toString(): string { return this.realpath }
+    public toString(os: "unix" | "windows" = "unix"): string {
+        if (os === "windows") {
+            return this.realpath.replaceAll("/", "\\\\")
+        }
+
+        return this.realpath
+    }
 
     public isAbsolute(): boolean {
         return isAbsolute(this.path)

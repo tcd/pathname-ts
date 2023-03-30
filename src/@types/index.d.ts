@@ -17,7 +17,7 @@ declare module "pathname-ts" {
         /**
          * Returns the absolute path as a string.
          */
-        toJSON: () => any
+        toJSON: (os?: "unix" | "windows") => any
         /**
          * Returns the absolute path as a string.
          */
